@@ -7,6 +7,53 @@ class Listings extends Component {
         this.state = {
             name: 'Joe'
         }
+        this.loopListings = this.loopListings.bind(this)
+    }
+    loopListings() {
+    var {data} = this.props
+
+      return data.map((listing, index) => {
+        return (<div className='col-md-3' key={index}>
+        <div className='listing'>
+          <div className='listing-image' style={{background: `url('${listing.image}') no-repeat center center` }}>
+            <span className='address'>{listing.address}</span>
+            <div className='details'>
+              <div className='col-md-3'>
+              <div className='user-img'></div>
+              </div>
+
+              <div className='col-md-9'>
+              <div className='user-details'>
+                <span className='user-name'>Nina Smith</span>
+                <span className='post-date'>05/08/2019</span>
+              </div>
+              <div className='listing-details'>
+                <div className='floor-space'>
+                  <i className="far fa-square"></i>
+                <span>1000 ft&sup2;</span>
+                </div>
+                <div className='bedrooms'>
+                  <i className="fas fa-bed"></i>
+                  <span>{listing.rooms}</span>
+                </div>
+              </div>
+
+              <div className='view-btn'>
+                View Listing
+              </div>
+              </div>
+              
+            </div>
+          </div>
+            <div className='bottom-info'>
+              <span className='price'>{listing.price}</span>
+              <span className='location'><i className="fas fa-map-marker-alt">
+              </i>{listing.city}, {listing.state}</span>
+                
+            </div>
+        </div>
+        </div>)
+      })
     }
     render() {
   return (<section id='listings'>
@@ -23,186 +70,21 @@ class Listings extends Component {
         </select>
         <div className='view'>
         <i className="fas fa-list-ul"></i>
-        <i class="fas fa-th"></i>
+        <i className="fas fa-th"></i>
         </div>
       </div>
       </section>
 
         <section className='listings-results'>
-          <div className='col-md-3'>
-          <div className='listing'>
-            <div className='listing-image'>
-              <span className='address'>23 Dexi Hills</span>
-              <div className='details'>
-                <div className='col-md-3'>
-                <div className='user-img'></div>
-                </div>
-
-                <div className='col-md-9'>
-                <div className='user-details'>
-                  <span className='user-name'>Nina Smith</span>
-                  <span className='post-date'>05/08/2019</span>
-                </div>
-                <div className='listing-details'>
-                  <div className='floor-space'>
-                    <i className="far fa-square"></i>
-                  <span>1000 ft&sup2;</span>
-                  </div>
-                  <div className='bedrooms'>
-                    <i className="fas fa-bed"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className='view-btn'>
-                  View Listing
-                </div>
-
-                </div>
-                
-              </div>
-            </div>
-              <div className='bottom-info'>
-                <span className='price'>$1000 / month</span>
-                <span className='location'><i className="fas fa-map-marker-alt">
-                </i>Richwood, NY</span>
-                  
-              </div>
-          </div>
-          </div>
-
-          <div className='col-md-3'>
-          <div className='listing'>
-            <div className='listing-image'>
-              <span className='address'>23 Dexi Hills</span>
-              <div className='details'>
-                <div className='col-md-3'>
-                <div className='user-img'></div>
-                </div>
-
-                <div className='col-md-9'>
-                <div className='user-details'>
-                  <span className='user-name'>Nina Smith</span>
-                  <span className='post-date'>05/08/2019</span>
-                </div>
-                <div className='listing-details'>
-                  <div className='floor-space'>
-                    <i className="far fa-square"></i>
-                  <span>1000 ft&sup2;</span>
-                  </div>
-                  <div className='bedrooms'>
-                    <i className="fas fa-bed"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className='view-btn'>
-                  View Listing
-                </div>
-
-                </div>
-                
-              </div>
-            </div>
-              <div className='bottom-info'>
-                <span className='price'>$1000 / month</span>
-                <span className='location'><i className="fas fa-map-marker-alt">
-                </i>Richwood, NY</span>
-                  
-              </div>
-          </div>
-          </div>
-
-          <div className='col-md-3'>
-          <div className='listing'>
-            <div className='listing-image'>
-              <span className='address'>23 Dexi Hills</span>
-              <div className='details'>
-                <div className='col-md-3'>
-                <div className='user-img'></div>
-                </div>
-
-                <div className='col-md-9'>
-                <div className='user-details'>
-                  <span className='user-name'>Nina Smith</span>
-                  <span className='post-date'>05/08/2019</span>
-                </div>
-                <div className='listing-details'>
-                  <div className='floor-space'>
-                    <i className="far fa-square"></i>
-                  <span>1000 ft&sup2;</span>
-                  </div>
-                  <div className='bedrooms'>
-                    <i className="fas fa-bed"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className='view-btn'>
-                  View Listing
-                </div>
-
-                </div>
-                
-              </div>
-            </div>
-              <div className='bottom-info'>
-                <span className='price'>$1000 / month</span>
-                <span className='location'><i className="fas fa-map-marker-alt">
-                </i>Richwood, NY</span>
-                  
-              </div>
-          </div>
-          </div>
-
-          <div className='col-md-3'>
-          <div className='listing'>
-            <div className='listing-image'>
-              <span className='address'>23 Dexi Hills</span>
-              <div className='details'>
-                <div className='col-md-3'>
-                <div className='user-img'></div>
-                </div>
-
-                <div className='col-md-9'>
-                <div className='user-details'>
-                  <span className='user-name'>Nina Smith</span>
-                  <span className='post-date'>05/08/2019</span>
-                </div>
-                <div className='listing-details'>
-                  <div className='floor-space'>
-                    <i className="far fa-square"></i>
-                  <span>1000 ft&sup2;</span>
-                  </div>
-                  <div className='bedrooms'>
-                    <i className="fas fa-bed"></i>
-                    <span>3 bedrooms</span>
-                  </div>
-                </div>
-
-                <div className='view-btn'>
-                  View Listing
-                </div>
-
-                </div>
-                
-              </div>
-            </div>
-              <div className='bottom-info'>
-                <span className='price'>$1000 / month</span>
-                <span className='location'><i className="fas fa-map-marker-alt">
-                </i>Richwood, NY</span>
-                  
-              </div>
-          </div>
-          </div>
           
+        {this.loopListings()}
+
         </section>
 
-        <section className='pagination'>
-          <ul className='pagination-nums'>
+        <section id='pagination'>
+          <ul className='pages'>
             <li>Prev</li>
-            <li>1</li>
+            <li className='active'>1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>

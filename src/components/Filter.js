@@ -12,8 +12,10 @@ class Filter extends Component {
   return (<section id='filter'>
       <div className='inside'>
       <h4>Filter</h4>
-      <select name='neighborhood' className='filters neighborhood'>
-          <option>Richwood</option>
+      <select name='neighborhood' className='filters neighborhood' onChange={this.props.change}>
+          <option value='Richwood'>Richwood</option>
+          <option value='Hartford'>Hartford</option>
+
       </select>
       <select name='housetype' className='filters housetype'>
           <option>Ranch</option>
@@ -35,19 +37,19 @@ class Filter extends Component {
           <span className='title'>
               Extras
           </span>
-          <label for='extras'> 
+          <label htmlFor='extras'> 
           <span>Elevators</span>
           <input type='checkbox' value='elevator' name='extras' />
           </label>
-          <label for='extras'> 
+          <label htmlFor='extras'> 
           <span>Swimming Pool</span>
           <input type='checkbox' value='swimming-pool' name='extras' />
           </label>
-          <label for='extras'> 
+          <label htmlFor='extras'> 
           <span>Finished Basement</span>
           <input type='checkbox' value='finished basement' name='extras' />
           </label>
-          <label for='extras'> 
+          <label htmlFor='extras'> 
           <span>Gym</span>
           <input type='checkbox' value='gym' name='extras' />
           </label>
